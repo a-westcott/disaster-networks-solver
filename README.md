@@ -4,6 +4,7 @@ This repository contains a C++ implementation of an exact algorithm for solving 
 ## Dependencies
 The solver depends upon [CGAL](doc.cgal.org) and the [Gurobi solver](https://www.gurobi.com/documentation/), as well as [boost](https://www.boost.org/doc/) (which is a dependency of CGAL).
 Installation instructions can be found at the respective websites.
+The use of Gurobi may require a licence, with details on the website.
 Gurobi version 11.0 is used, and the `makefile` will have to be modified to accommodate a different version. 
 The makefile also assumes the definition of the `$GUROBI_HOME` shell variable. 
 
@@ -27,5 +28,11 @@ To run a batch solve on the instances listed in `instances/main-instances.txt`, 
 
 To run a single instance with the disaster radius as specified in the input file, logging information to `log.txt`, one could run 
 ```sh
-./main -s instance/network-deluauny-n-20-i-0.txt -l > log.txt
+./main -s instances/network-deluauny-n-20-i-0.txt -l > log.txt
+```
+
+Additional instances can be generated, with the file compiled and options listed by running
+```sh
+make generate
+./generate --help
 ```
